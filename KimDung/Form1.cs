@@ -24,7 +24,7 @@ namespace KimDung
 
         private void Click_Btn1(object sender, EventArgs e)
         {
-            MessageBox.Show("loz");
+            MessageBox.Show("abc");
         }
     }
 }
