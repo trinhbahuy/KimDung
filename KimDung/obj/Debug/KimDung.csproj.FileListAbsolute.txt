@@ -1,0 +1,9 @@
+C:\Users\huy\source\repos\KimDung\KimDung\bin\Debug\KimDung.exe.config
+C:\Users\huy\source\repos\KimDung\KimDung\bin\Debug\KimDung.exe
+C:\Users\huy\source\repos\KimDung\KimDung\bin\Debug\KimDung.pdb
+C:\Users\huy\source\repos\KimDung\KimDung\obj\Debug\KimDung.Form1.resources
+C:\Users\huy\source\repos\KimDung\KimDung\obj\Debug\KimDung.Properties.Resources.resources
+C:\Users\huy\source\repos\KimDung\KimDung\obj\Debug\KimDung.csproj.GenerateResource.Cache
+C:\Users\huy\source\repos\KimDung\KimDung\obj\Debug\KimDung.csproj.CoreCompileInputs.cache
+C:\Users\huy\source\repos\KimDung\KimDung\obj\Debug\KimDung.exe
+C:\Users\huy\source\repos\KimDung\KimDung\obj\Debug\KimDung.pdb
