@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace KimDung
 {
-    public partial class Form1 : Form
+    public partial class fmain : Form
     {
-        public Form1()
+        public fmain()
         {
             InitializeComponent();
         }
