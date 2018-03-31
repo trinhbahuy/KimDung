@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.search = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.search_form = new System.Windows.Forms.TextBox();
             this.back = new System.Windows.Forms.Button();
             this.next = new System.Windows.Forms.Button();
             this.check = new System.Windows.Forms.Button();
+            this.rich = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // search
@@ -44,15 +45,14 @@
             this.search.TabIndex = 1;
             this.search.Text = "search";
             this.search.UseVisualStyleBackColor = true;
-            this.search.Click += new System.EventHandler(this.Click_Btn1);
+            this.search.Click += new System.EventHandler(this.Find);
             // 
-            // textBox1
+            // search_form
             // 
-            this.textBox1.Location = new System.Drawing.Point(353, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "1234";
+            this.search_form.Location = new System.Drawing.Point(83, 20);
+            this.search_form.Name = "search_form";
+            this.search_form.Size = new System.Drawing.Size(370, 20);
+            this.search_form.TabIndex = 2;
             // 
             // back
             // 
@@ -74,12 +74,21 @@
             // 
             // check
             // 
-            this.check.Location = new System.Drawing.Point(12, 12);
+            this.check.Location = new System.Drawing.Point(12, 20);
             this.check.Name = "check";
             this.check.Size = new System.Drawing.Size(47, 23);
             this.check.TabIndex = 5;
             this.check.Text = "check";
             this.check.UseVisualStyleBackColor = true;
+            this.check.Click += new System.EventHandler(this.Click_Btn1);
+            // 
+            // rich
+            // 
+            this.rich.Location = new System.Drawing.Point(83, 60);
+            this.rich.Name = "rich";
+            this.rich.Size = new System.Drawing.Size(370, 160);
+            this.rich.TabIndex = 6;
+            this.rich.Text = "";
             // 
             // fmain
             // 
@@ -87,10 +96,11 @@
             this.AutoScroll = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(545, 261);
+            this.Controls.Add(this.rich);
             this.Controls.Add(this.check);
             this.Controls.Add(this.next);
             this.Controls.Add(this.back);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.search_form);
             this.Controls.Add(this.search);
             this.Name = "fmain";
             this.Text = "fmain";
@@ -101,11 +111,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox search_form;
         private System.Windows.Forms.Button back;
         private System.Windows.Forms.Button next;
         private System.Windows.Forms.Button search;
         private System.Windows.Forms.Button check;
+        private System.Windows.Forms.RichTextBox rich;
     }
 }
 

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Text.RegularExpressions;
 namespace KimDung
 {
     public partial class fmain : Form
@@ -26,5 +26,22 @@ namespace KimDung
         {
             MessageBox.Show("abc");
         }
+
+
+
+        private void Find(object sender, EventArgs e)
+        {
+            string key = search_form.Text;
+            Search search1 = new Search(key);
+            search1.getKeyword();
+            /*foreach (string word in search1.search)
+                rich.Text += word;*/
+            search1.find();
+            for (int i = 0; i < search1.b.Length; i++)
+            {
+                rich.Text += search1.splits[search1.b[i]];
+
+            }
+        }
     }
-}
+}   

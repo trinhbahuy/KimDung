@@ -1,7 +1,6 @@
 C:\Users\huy\source\repos\KimDung\KimDung\bin\Debug\KimDung.exe.config
 C:\Users\huy\source\repos\KimDung\KimDung\bin\Debug\KimDung.exe
 C:\Users\huy\source\repos\KimDung\KimDung\bin\Debug\KimDung.pdb
-C:\Users\huy\source\repos\KimDung\KimDung\obj\Debug\KimDung.Form1.resources
 C:\Users\huy\source\repos\KimDung\KimDung\obj\Debug\KimDung.Properties.Resources.resources
 C:\Users\huy\source\repos\KimDung\KimDung\obj\Debug\KimDung.csproj.GenerateResource.Cache
 C:\Users\huy\source\repos\KimDung\KimDung\obj\Debug\KimDung.csproj.CoreCompileInputs.cache
@@ -16,3 +15,5 @@ C:\Users\nguyen duc huy\Documents\Visual Studio 2015\Projects\KimDung\KimDung\ob
 C:\Users\nguyen duc huy\Documents\Visual Studio 2015\Projects\KimDung\KimDung\obj\Debug\KimDung.Properties.Resources.resources
 C:\Users\nguyen duc huy\Documents\Visual Studio 2015\Projects\KimDung\KimDung\obj\Debug\KimDung.csproj.GenerateResource.Cache
 C:\Users\nguyen duc huy\Documents\Visual Studio 2015\Projects\KimDung\KimDung\obj\Debug\KimDung.fmain.resources
+C:\Users\huy\source\repos\KimDung\KimDung\obj\Debug\KimDung.csprojResolveAssemblyReference.cache
+C:\Users\huy\source\repos\KimDung\KimDung\obj\Debug\KimDung.fmain.resources
