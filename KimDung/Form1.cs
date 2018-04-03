@@ -37,11 +37,14 @@ namespace KimDung
             /*foreach (string word in search1.search)
                 rich.Text += word;*/
             search1.find();
-            for (int i = 0; i < search1.b.Length; i++)
+            string textresult="";
+            for(int i=0; i<search1.splitscheck.Length;i++)
             {
-                rich.Text += search1.splits[search1.b[i]];
-
+                if(search1.splitscheck[i] == true)
+                    textresult += search1.splits[i];
             }
+            rich.Text = textresult;
+            textresult = "";
         }
     }
 }   

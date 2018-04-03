@@ -11,10 +11,11 @@ namespace KimDung
         String a ;
         Regex myRegex = new Regex(@"(\w+)");
         public  MatchCollection AllMatches;
-        public string[] search;
-        public Regex[] myregex;
-        public int[] b;
-        public string[] splits;
+        public string[] search;//luu tru cac tu cua nguoi dung nhap vao
+        public Regex[] myregex;//luu tru cac regex tao ra duoc tu mang search
+        public string[] splits;//luu tru cac cau trong du lieu load ra
+        public bool[] splitscheck;//luu tru cac bien kiem tra cac cau trong du lieu load ra
+
         public Search(string a)
         {
             this.a = a;
@@ -23,9 +24,9 @@ namespace KimDung
             myregex = new Regex[AllMatches.Count];
         }
 
-        int d = 0;
         public void getKeyword()
         {
+            int d = 0;
             if (AllMatches.Count > 0)
             {
 
@@ -45,29 +46,22 @@ namespace KimDung
         {
             String s = @" Ở bên kia bầu trời về đêm chắc đang lạnh dần. Và em giờ đang chìm trong giấc mơ êm đềm. Gửi mây mang vào phòng vòng tay của anh nồng nàn. ";
             splits = s.Split('.');
-            int d = 0, x=0;
-            b = new int[splits.Length];
-            foreach (string split in splits)
-            {
-                
+            splitscheck = new bool[splits.Length];
+            for(int i=0;i<splits.Length;i++)
+            {         
                 bool check = true;
-                for (int i = 0; i < d; i++)
+                splitscheck[i] = false;
+                for (int j = 0; j < myregex.Length; j++)
                 {
-                    if (!(myregex[i].IsMatch(split)))
+                    if (!(myregex[j].IsMatch(splits[i])))
                     {
                         check = false;
                         break;
                     }
                 }
-                
-                if (check)
-                {
-                    b[x] = d;
-                    x++;
-                }
-                d += 1;
 
-
+                if (check == true)   splitscheck[i] = true;
+                else splitscheck[i] = false;
             }
         }
 

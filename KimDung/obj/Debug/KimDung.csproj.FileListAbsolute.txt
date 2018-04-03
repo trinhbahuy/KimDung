@@ -17,3 +17,12 @@ C:\Users\nguyen duc huy\Documents\Visual Studio 2015\Projects\KimDung\KimDung\ob
 C:\Users\nguyen duc huy\Documents\Visual Studio 2015\Projects\KimDung\KimDung\obj\Debug\KimDung.fmain.resources
 C:\Users\huy\source\repos\KimDung\KimDung\obj\Debug\KimDung.csprojResolveAssemblyReference.cache
 C:\Users\huy\source\repos\KimDung\KimDung\obj\Debug\KimDung.fmain.resources
+C:\Users\nguyen duc huy\Documents\Visual Studio 2015\Projects\KimDung\KimDung\KimDung\bin\Debug\KimDung.exe.config
+C:\Users\nguyen duc huy\Documents\Visual Studio 2015\Projects\KimDung\KimDung\KimDung\obj\Debug\KimDung.exe
+C:\Users\nguyen duc huy\Documents\Visual Studio 2015\Projects\KimDung\KimDung\KimDung\obj\Debug\KimDung.pdb
+C:\Users\nguyen duc huy\Documents\Visual Studio 2015\Projects\KimDung\KimDung\KimDung\bin\Debug\KimDung.exe
+C:\Users\nguyen duc huy\Documents\Visual Studio 2015\Projects\KimDung\KimDung\KimDung\bin\Debug\KimDung.pdb
+C:\Users\nguyen duc huy\Documents\Visual Studio 2015\Projects\KimDung\KimDung\KimDung\obj\Debug\KimDung.csprojResolveAssemblyReference.cache
+C:\Users\nguyen duc huy\Documents\Visual Studio 2015\Projects\KimDung\KimDung\KimDung\obj\Debug\KimDung.fmain.resources
+C:\Users\nguyen duc huy\Documents\Visual Studio 2015\Projects\KimDung\KimDung\KimDung\obj\Debug\KimDung.Properties.Resources.resources
+C:\Users\nguyen duc huy\Documents\Visual Studio 2015\Projects\KimDung\KimDung\KimDung\obj\Debug\KimDung.csproj.GenerateResource.Cache
