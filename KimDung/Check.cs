@@ -8,7 +8,7 @@ namespace KiDung
         public string[] amdau = new string[] { "a", "á", "à", "ả", "ạ", "ă", "â", "ẩ", "b", "c", "d", "đ", "e", "ê", "ế", "g", "h", "i",
             "ì", "ỉ", "k", "l", "m", "n", "o", "ó", "ô", "ố", "ồ", "ổ", "ơ", "ớ", "ờ", "ở", "ợ",
             "p", "q", "r", "s", "t", "u", "ú", "ù", "ủ", "ụ", "ư", "ứ", "ừ", "ử", "v", "x", "y", "ý", "ỷ", "ch", "gh",
-            "gi", "kh", "ng", "ngh", "nh", "ph", "th", "tr" };
+            "gi", "kh", "ng", "ngh", "nh", "ph", "th", "tr", "ph", "qu" };
 
         public string[] amdau_dung_mot_minh = new string[] { "a", "á", "à", "ả", "ạ", "ê", "ế", "i",
             "ì", "ỉ", "ó", "ô", "ố", "ồ", "ổ", "ơ", "ớ", "ờ", "ở", "ợ",
@@ -29,9 +29,9 @@ namespace KiDung
             "om", "óm", "òm", "ỏm", "õm", "ọm", "on", "ón", "òn", "ỏn", "õn", "ọn", "óp", "ọp", "ót", "ọt", "ốc", "ộc",
             "ôi", "ối", "ồi", "ổi", "ỗi", "ội", "ôm", "ốm", "ồm", "ổm", "ộm", "ôn", "ốn", "ồn", "ổn", "ỗn", "ộn", "ốp", "ộp",
             "ốt", "ột", "ơi", "ới", "ời", "ởi", "ỡi", "ợi", "ơm", "ớm", "ờm", "ởm", "ỡm", "ợm", "ơn", "ớn", "ờn", "ởn", "ỡn", "ợn",
-            "ớp", "ợp", "ua", "úa", "ùa", "ủa", "ũa", "ụa", "úc", "ục", "uê", "uế", "uề", "uể", "uệ", "ui", "úi", "ùi", "ủi", "ũi", "ụi",
+            "ớp", "ợp", "ua", "úa", "uá", "ùa", "uà", "ủa", "uả", "ũa", "ụa", "uạ", "úc", "ục", "uê", "uế", "uề", "uể", "uệ", "ui", "úi", "ùi", "ủi", "ũi", "ụi",
             "um", "úm", "ùm", "ủm", "ũm", "ụm", "un", "ún", "ùn", "ủn", "ũn", "ụn", "úp", "ụp", "út", "ụt", "ưa", "ứa", "ừa", "ửa", "ữa", "ựa",
-            "ức", "ực", "ửi", "ứt",
+            "ức", "ực", "ửi", "ứt", "uy", "úy", "uý", "uỳ", "ủy", "uỷ", "uỹ", "uỵ",
             "ách", "ạch", "ang", "àng", "ảng", "ãng", "ạng", "anh", "ành", "ảnh", "ãnh", "ạnh", "ếch", "ệch", "ênh", "ệnh", "ích", "ịch",
             "inh", "ính", "ình", "ỉnh", "ĩnh", "ịnh", "iên", "iến", "iền", "iển", "iễn", "iện", "iêm", "iếm", "iềm", "iểm", "iễm", "iệm",
             "oai", "oái", "oài", "oải", "oại",
@@ -59,7 +59,7 @@ namespace KiDung
             "ốt", "ơi", "ới", "ờm", "ơn", "ớn",
             "ua", "úa", "ùa", "ủa", "úc", "ục", "ui", "úi", "ủi",
             "um", "úm", "ùm", "ùn", "ủn", "ụn", "úp", "ụp", "út", "ụt", "ứa", "ựa",
-            "ức", "ực",
+            "ức", "ực", "úy", "ủy",
             "ách", "ạch", "ang", "anh", "ảnh", "ếch", "ích", "ịch",
             "inh",
             "oai", "oái", "oải",
@@ -70,6 +70,8 @@ namespace KiDung
             "oang", "uynh", "uỳnh", "uỳnh", "uỵch",
             "uông", "uống", "uổng", "ương"
         };
+
+        public string[] cac_cap_am_khong_duoc_dung_cung_nhau = new string[] { };
 
         public CheckCT()
         {
@@ -82,14 +84,16 @@ namespace KiDung
             return true;
         }
 
+
+        
+        //kiem tra tu co am dau voi am cuoi thoa man khong
         public bool check(string word)
         {
             string tmpword = word.ToLower();
-            string[] am_tiet = word.ToCharArray().Select(c => c.ToString()).ToArray();
-            int index = 0; ;
-            bool checkdau = true, checkcuoi = false;
+            string[] am_tiet = tmpword.ToCharArray().Select(c => c.ToString()).ToArray();
+            int index = 0;
+            bool checkdau = true, checkcuoi = false, checkgiua = true;
             string amdautmp = "", amcuoitmp = "";
-
 
             //check am dau
             while (check1)
@@ -145,7 +149,7 @@ namespace KiDung
                     }
 
                     //neu tu bi lap lai am dau, tu do chac chan sai chinh ta VD: "aa", "bb"
-                    if (amdautmp == amcuoitmp) checkcuoi == false;
+                    if ((amdautmp - am_tiet[index]) == amcuoitmp) checkcuoi == false;
                     else
                     {
                         foreach (string ac in amcuoi)
@@ -153,6 +157,7 @@ namespace KiDung
                             if (amcuoitmp == ac)
                             {
                                 checkcuoi = true;
+                                checkgiua = false;
                                 break;
                             }
                         }
@@ -177,7 +182,24 @@ namespace KiDung
                 }              
             }
 
-            if (checkdau & checkcuoi) return true;
+            /*neu da kiem tra am dau va am cuoi cua tu thoa man, thi can kiem tra xem hai am do co duoc di cung nhau khong.
+             */
+            if ((checkdau == true) && (checkcuoi == true) && (checkgiua == false))
+            {
+                checkgiua = true;
+                string amgiuatmp = am_tiet[index - 1] + am_tiet[index];
+                foreach (string ag in cac_cap_am_khong_duoc_dung_cung_nhau)
+                {
+                    if (amgiuatmp == ag)
+                    {
+                        checkgiua = false;
+                        break;
+                    }
+                }
+
+                if (checkgiua == true) return true;
+            }
+            else if ((checkdau == true) && (checkcuoi == true) && (checkgiua == true)) return true;
             else return false;
         }
     }
