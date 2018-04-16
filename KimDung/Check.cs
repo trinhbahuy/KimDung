@@ -20,11 +20,11 @@ namespace KiDung
             "u", "ú", "ù", "ủ", "ũ", "ụ", "ư", "ứ", "ừ", "ử", "ữ", "ự", "y", "ý", "ỳ", "ỷ", "ỵ",
             "ác", "ạc", "ai", "ái", "ài", "ải", "ãi","ại", "am", "ám", "àm", "ảm", "ãm", "ạm", "an", "án", "àn", "ản", "ãn", "ạn",
             "ao", "áo", "ào", "ảo", "ão", "ạo", "áp", "ạp", "át", "ạt", "au", "áu", "àu", "ay", "áy", "ày", "ảy", "ãy", "ạy",
-            "ắc", "ặc", "ăm", "ắm", "ằm", "ẳm", "ẵm", "ăn", "ắn", "ằn", "ẳn", "ắt", "ặt", "ặn",
+            "ắc", "ặc", "ăm", "ắm", "ằm", "ẳm", "ẵm", "ặm", "ăn", "ắn", "ằn", "ẳn", "ắt", "ặt", "ặn",
             "ấc", "ậc", "âm", "ấm", "ầm", "ẩm", "ẫm", "ậm", "ân", "ấn", "ần", "ẩn", "ẫn", "ận", "ất", "ật", "âu", "ấu", "ầu", "ẩu", "ẫu", "ậu",
             "éc", "ẹc", "em", "ém", "èm", "ẻm", "ẽm", "ẹm", "en", "én", "èn", "ẻn", "ẽn", "ẹn", "eo", "éo", "èo", "ẻo", "ẽo", "ẹo",
             "ép", "ẹp", "ét", "ẹt", "êm", "ếm", "ềm", "ệm", "ên", "ến", "ền", "ển", "ện", "ếp", "ệp", "êu", "ếu", "ều", "ểu",
-            "ia", "ía", "ìa", "ỉa", "ịa", "im", "ím", "ìm", "ỉm", "ĩm", "ịm", "in", "ín", "ìn", "ỉn", "ịn", "íp", "ịp", "ít", "ịt",
+            "ia", "ía", "ìa", "ỉa", "ĩa", "ịa", "im", "ím", "ìm", "ỉm", "ĩm", "ịm", "in", "ín", "ìn", "ỉn", "ịn", "íp", "ịp", "ít", "ịt",
             "oa", "óa", "òa", "ỏa", "õa", "ọa", "óc", "ọc", "oe", "óe", "ỏe", "ọe", "oi", "ói", "òi", "ỏi", "õi", "ọi",
             "om", "óm", "òm", "ỏm", "õm", "ọm", "on", "ón", "òn", "ỏn", "õn", "ọn", "óp", "ọp", "ót", "ọt", "ốc", "ộc",
             "ôi", "ối", "ồi", "ổi", "ỗi", "ội", "ôm", "ốm", "ồm", "ổm", "ộm", "ôn", "ốn", "ồn", "ổn", "ỗn", "ộn", "ốp", "ộp",
@@ -37,13 +37,39 @@ namespace KiDung
             "oai", "oái", "oài", "oải", "oại",
             "oăn", "oắn", "oằn", "oặn", "oan", "oán", "oàn", "oản", "oãn", "oạn", "ong", "óng", "òng", "ỏng", "õng", "ọng",
             "oay", "oáy",
-            "ông", "ống", "ồng", "ổng", "ỗng", "ộng", "ung", "úng", "ùng", "ủng", "ũng", "ụng","uôn", "uốn", "uồn", "uộn",
+            "ông", "ống", "ồng", "ổng", "ỗng", "ộng", "ung", "úng", "ùng", "ủng", "ũng", "ụng", "uôn", "uốn", "uồn", "uộn",
             "uây", "uấy", "uầy", "uẫy", "uậy",
             "ươn", "ướn", "ườn", "ượn", "ưng", "ứng", "ừng", "ửng", "ững", "ựng",
             "iêng", "iếng", "iềng", "iệng", "uyên", "uyến", "uyền", "uyển", "uyễn", "uyện",
             "oang", "oáng", "oàng", "oảng", "oãng", "oạng", "uynh", "uỳnh", "uých", "uỳnh", "uỵch",
             "uông","uống","uồng","uổng","uộng", "ương", "ướng", "ường", "ưởng", "ưỡng", "ượng"
             };
+
+        public string[] amcuoi_dung_mot_minh = new string[] {
+            "ác", "ai", "ái", "ải", "ại", "am", "ám", "ảm", "an", "án",
+            "ao", "áo", "ào", "ảo", "áp", "át", "ạt", "au", "ay", "áy",
+            "ặc", "ẵm", "ăn", "ắt",
+            "âm", "ấm", "ầm", "ẩm", "ân", "ấn", "ẩn", "ất", "âu", "ấu", "ẩu",
+            "éc", "ẹc", "em", "ém", "ẻm", "én", "eo", "éo", "èo", "ẻo", "ẽo",
+            "ép", "ét", "êm", "ếp",
+            "ỉa", "im", "ím", "ỉm", "in", "ỉn", "ít", "ịt",
+            "oa", "òa", "óc", "ọc", "oe", "óe", "ọe", "oi", "ói", "ỏi",
+            "om", "óp", "ốc", "ộc",
+            "ôi", "ối", "ổi", "ôm", "ốm", "ồm", "ôn", "ồn", "ổn", "ốp", "ộp",
+            "ốt", "ơi", "ới", "ờm", "ơn", "ớn",
+            "ua", "úa", "ùa", "ủa", "úc", "ục", "ui", "úi", "ủi",
+            "um", "úm", "ùm", "ùn", "ủn", "ụn", "úp", "ụp", "út", "ụt", "ứa", "ựa",
+            "ức", "ực",
+            "ách", "ạch", "ang", "anh", "ảnh", "ếch", "ích", "ịch",
+            "inh",
+            "oai", "oái", "oải",
+            "oẳn", "oan", "oán", "oản", "ong", "óng",
+            "ông", "ống", "ổng", "ung", "úng", "ủng", "uốn",
+            "ươn", "ưng", "ứng", "ửng",
+            "uyên", "uyển", "uyễn",
+            "oang", "uynh", "uỳnh", "uỳnh", "uỵch",
+            "uông", "uống", "uổng", "ương"
+        };
 
         public CheckCT()
         {
@@ -132,13 +158,13 @@ namespace KiDung
                         }
 
                         /*neu check phan con lai cua word khong nam trong amcuoi[],
-                         *  thi can check ca cum tu xem co nam trong amcuoi[] khong
-                         *  vi doi khi mot van cung co the la mot tu*/
+                         *  thi can check ca cum tu xem co nam trong amcuoi_dung_mot_minh[] khong
+                         *  vi doi khi mot van cung co the la mot tu vidu: "an"*/
                         if (checkcuoi == false)
                         {
                             amdautmp -= am_tiet[index];
                             amcuoitmp = amdautmp + amcuoitmp;
-                            foreach (string ac in amcuoi)
+                            foreach (string ac in amcuoi_dung_mot_minh)
                             {
                                 if (amcuoitmp == ac)
                                 {
