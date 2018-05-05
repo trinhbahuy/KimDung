@@ -183,12 +183,12 @@ namespace KiDung
 
         public string[] cac_am_khong_the_dung_canh_nhau_neu_tu_chi_co_hai_am_tiet = new string[]
         {
-            "bĩ","dá","dà","dả","dé","dẹ","dể","dó","dò","dọ","dộ","dợ","dú","dứ","dừ","dử","đạ","đẹ","đí","đì","đỉ","đị","đõ","đớ","đũ",
-            "đụ","đư","đứ","đừ","đự","gi","gị","gớ","gư","ha","hã","hẻ","hế","hi","hĩ","hị","hó","hỏ","hõ","hỡ","hợ","hu","hụ","hứ","hử",
-            "hữ","hự","ka","lé","lỉ","lĩ","lỏ","lồ","lổ","lư","mế","mố","mừ","nà","nả","ne","nế","nệ","ni","ní","nì","nị","nò","nõ","nồ",
-            "nớ","nu","nú","nủ","nũ","nư","nừ","nử","nữ","nự","rạ","rê","rễ","rệ","rí","rì","rĩ","rị","ro","ró","rỏ","rố","rơ","rớ","rù",
-            "rụ","rư","rứ","rừ","rử","rữ","sá","sà","sả","sạ","sé","sẹ","sê","sế","sị","so","só","sồ","sũ","sụ","sữ","sỹ","te","tẹ","tĩ",
-            "tó","tõ","tọ","tở","tú","vẹ","vể","vọ","vỡ","vư","vứ","vừ","vữ","vự","xở","xú","xư"
+            "bĩ","dá","dả","dé","dẹ","dể","dó","dò","dợ","dú","dứ","dử","đạ","đẹ","đí","đì","đỉ","đị","đõ","đớ","đũ",
+            "đụ","đư","đứ","đừ","đự","gi","gị","gớ","gư","ha","hã","hẻ","hế","hi","hĩ","hị","hó","hỏ","hõ","hỡ","hợ","hụ","hứ","hử",
+            "hữ","ka","lé","lỉ","lĩ","lỏ","lồ","lổ","lư","mế","mố","mừ","nà","nả","ne","nế","nệ","ni","ní","nì","nị","nò","nõ","nồ",
+            "nớ","nu","nú","nủ","nũ","nư","nừ","nử","nữ","nự","rạ","rê","rễ","rệ","rí","rì","rĩ","rị","ró","rỏ","rố","rơ","rớ","rù",
+            "rụ","rư","rứ","rừ","rử","rữ","sá","sạ","sé","sẹ","sế","sị","só","sồ","sũ","sụ","sữ","sỹ","te","tẹ","tĩ",
+            "tó","tõ","tọ","tở","vẹ","vể","vọ","vư","vứ","vừ","vữ","vự","xở","xú","xư"
 
         };
 
@@ -211,14 +211,14 @@ namespace KiDung
             string tmpword = word.ToLower();
             string[] am_tiet = tmpword.ToCharArray().Select(c => c.ToString()).ToArray();
             int index = 0;
-            bool checkdau = true, checkcuoi = false, checkgiua = true;
+            bool checkdau = true, checkcuoi = false, checkgiua = true, checktmp1 = true;
             string amdautmp = "", amcuoitmp = "";
 
             //check am dau
-            while (check1)
+            while (checktmp1)
             {
                 amdautmp += am_tiet[index];
-                bool check1tmp = false;
+                checktmp1 = false;
                 foreach(string ad in amdau)
                 {
                     if (amdautmp == ad)
@@ -227,12 +227,12 @@ namespace KiDung
                         {
                             index += 1;
                         }    
-                        check1tmp = true;
+                        checktmp1 = true;
                         break;
                     }
                 }
 
-                if(check1tmp == false)
+                if(checktmp1 == false)
                 {
                     if (index == 0) checkdau = false;
                     break;
@@ -339,6 +339,15 @@ namespace KiDung
             else if ((checkdau == true) && (checkcuoi == true) && (checkgiua == true)) return true;
             else return false;
         }
+    }
+
+    public bool checkCT(string word)
+    {
+        bool check1 = false, check2 = false;
+        check1 = this.checklength(word);
+        check2 = this.checkCT(word);
+        if (check1 && check2) return true;
+        else return true;
     }
 }
 
