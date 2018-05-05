@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
 namespace KimDung
 {
     public partial class fmain : Form
@@ -35,6 +36,25 @@ namespace KimDung
             
             Form2 form2 = new Form2();
             form2.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=HUY;Initial Catalog=kim_dung;Integrated Security=True");
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("Select * from Than_Dieu_Dai_Hiep", conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    list.Items.Add(rdr["ten_chuong"].ToString());
+                }
+            }
+            catch
+            {
+                MessageBox.Show("lỗi");
+            }
         }
     }
 }   
