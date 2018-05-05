@@ -31,20 +31,10 @@ namespace KimDung
 
         private void Find(object sender, EventArgs e)
         {
-            string key = search_form.Text;
-            Search search1 = new Search(key);
-            search1.getKeyword();
-            /*foreach (string word in search1.search)
-                rich.Text += word;*/
-            search1.find();
-            string textresult="";
-            for(int i=0; i<search1.splitscheck.Length;i++)
-            {
-                if(search1.splitscheck[i] == true)
-                    textresult += search1.splits[i];
-            }
-            rich.Text = textresult;
-            textresult = "";
+     
+            
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
         }
     }
 }   

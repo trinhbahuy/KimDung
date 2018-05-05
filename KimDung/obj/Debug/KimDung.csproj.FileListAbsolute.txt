@@ -26,3 +26,4 @@ C:\Users\nguyen duc huy\Documents\Visual Studio 2015\Projects\KimDung\KimDung\Ki
 C:\Users\nguyen duc huy\Documents\Visual Studio 2015\Projects\KimDung\KimDung\KimDung\obj\Debug\KimDung.fmain.resources
 C:\Users\nguyen duc huy\Documents\Visual Studio 2015\Projects\KimDung\KimDung\KimDung\obj\Debug\KimDung.Properties.Resources.resources
 C:\Users\nguyen duc huy\Documents\Visual Studio 2015\Projects\KimDung\KimDung\KimDung\obj\Debug\KimDung.csproj.GenerateResource.Cache
+C:\Users\huy\source\repos\KimDung\KimDung\obj\Debug\KimDung.Form2.resources
