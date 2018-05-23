@@ -63,6 +63,7 @@
             this.rich.Size = new System.Drawing.Size(688, 398);
             this.rich.TabIndex = 6;
             this.rich.Text = "";
+            this.rich.TextChanged += new System.EventHandler(this.rich_TextChanged);
             // 
             // list
             // 
@@ -71,12 +72,13 @@
             this.list.Name = "list";
             this.list.Size = new System.Drawing.Size(121, 21);
             this.list.TabIndex = 7;
+            this.list.SelectionChangeCommitted += new System.EventHandler(this.list_SelectionChangeCommitted);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(366, 16);
+            this.button1.Location = new System.Drawing.Point(371, 16);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 21);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -95,7 +97,6 @@
             this.Controls.Add(this.search);
             this.Name = "fmain";
             this.Text = "fmain";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }

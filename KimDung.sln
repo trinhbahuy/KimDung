@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KimDung", "KimDung\KimDung.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Search", "..\Search\Search\Search.csproj", "{3028C124-6C2C-4DAB-AAD2-5EE42ABC9E57}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hightlight", "..\Hightlight\Hightlight\Hightlight.csproj", "{73EF3B2A-9BCA-42DA-A29F-BBC61A7547A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3028C124-6C2C-4DAB-AAD2-5EE42ABC9E57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3028C124-6C2C-4DAB-AAD2-5EE42ABC9E57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3028C124-6C2C-4DAB-AAD2-5EE42ABC9E57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73EF3B2A-9BCA-42DA-A29F-BBC61A7547A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73EF3B2A-9BCA-42DA-A29F-BBC61A7547A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73EF3B2A-9BCA-42DA-A29F-BBC61A7547A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73EF3B2A-9BCA-42DA-A29F-BBC61A7547A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
