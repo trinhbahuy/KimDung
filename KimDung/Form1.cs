@@ -25,7 +25,8 @@ namespace KimDung
 
         private void Click_Btn1(object sender, EventArgs e)
         {
-            MessageBox.Show("abc");
+            //MessageBox.Show("abc");
+            //CheckCT obj2 = new CheckCT();
         }
 
 
@@ -53,7 +54,7 @@ namespace KimDung
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    string ten_chuong = "Chương " + rdr["id"] + ": " + rdr["ten_chuong"].ToString();
+                    string ten_chuong = /*"Chương " + rdr["id"] + ": " +*/ rdr["ten_chuong"].ToString();
                     list.Items.Add(ten_chuong);
                 }
             }

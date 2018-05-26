@@ -1,8 +1,12 @@
 ﻿using System;
-
-namespace KiDung
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+namespace KimDung
 {
-    public class CheckCT
+    class CheckCT
     {
         //mang amdau1 chua cac am co the dung dau, ngoai tru cac am co the dung mot minh
         public string[] amdau = new string[] { "a", "á", "à", "ả", "ạ", "ă", "â", "ẩ", "b", "c", "d", "đ", "e", "é", "ê", "ế", "g", "h", "i",
@@ -206,49 +210,77 @@ namespace KiDung
 
         
         //kiem tra chinh ta
-        public bool check(string word)
+        public bool checkct(string word)
         {
             string tmpword = word.ToLower();
             string[] am_tiet = tmpword.ToCharArray().Select(c => c.ToString()).ToArray();
             int index = 0;
-            bool checkdau = true, checkcuoi = false, checkgiua = true, checktmp1 = true;
+            int wordlength = word.Length;
+            bool checkdau = false, checkcuoi = false, checkgiua = true, checktmp1 = true;
             string amdautmp = "", amcuoitmp = "";
 
-            //check am dau
-            while (checktmp1)
-            {
-                amdautmp += am_tiet[index];
-                checktmp1 = false;
-                foreach(string ad in amdau)
-                {
-                    if (amdautmp == ad)
-                    {
-                        if (index < (word.Length - 1))
-                        {
-                            index += 1;
-                        }    
-                        checktmp1 = true;
-                        break;
-                    }
-                }
 
-                if(checktmp1 == false)
+
+            //kiem tra word co phai la am dau dung mot minh khong
+            foreach(string ad in amdau_dung_mot_minh)
+            {
+                if(tmpword == ad)
                 {
-                    if (index == 0) checkdau = false;
+                    checkdau == true;
+                    checkcuoi == true;
                     break;
-                }
-                else
-                {
-                    if (index == (word.Length - 1)) break;
                 }
             }
 
+            //kiem tra word co phai la am cuoi dung mot minh khong
+            foreach(string ac in amcuoi_dung_mot_minh)
+            {
+                if(tmpword == ac)
+                {
+                    checkdau == true;
+                    checkcuoi == true;
+                    break;
+                }
+            }
+
+            if(checkdau == false)
+            {
+                checkdau = true;
+                while (checktmp1)
+                {
+                    amdautmp += am_tiet[index];
+                    checktmp1 = false;
+                    foreach (string ad in amdau)
+                    {
+                        if (amdautmp == ad)
+                        {
+                            checktmp1 = true;
+                            break;
+                        }
+                    }
+
+                    if (checktmp1 == false)
+                    {
+                        if (index == 0) checkdau = false;
+                        break;
+                    }
+                    else
+                    {
+                        if (index < (wordlength - 1))
+                        {
+                            index += 1;
+                        }
+                        else break;
+                    }
+                }
+            }
+            
 
             //check am cuoi
-            if (checkdau == true)
+            if ((checkdau == true) && (checkcuoi == false))
             {
-                /*neu ca word la mot am dau, can kiem tra xem am dau nay co duoc dung mot minh khong*/
-                if(index == (word.Length - 1))
+                /*neu ca word la mot am dau, can kiem tra xem am dau nay co duoc dung mot minh khong
+                if((checktmp1 == true)&&(index == (wordlength - 1)))
                 {
                     foreach(string ad in amdau_dung_mot_minh)
                     {
@@ -259,10 +291,10 @@ namespace KiDung
                         }
                     }
                 }
-                /*neu khong, can kiem tra phan con lai cua word co nam trong amcuoi[] khong*/
+                neu khong, can kiem tra phan con lai cua word co nam trong amcuoi[] khong
                 else
-                {
-                    for (int i = index; i < word.Length; i++)
+                {*/
+                    for (int i = index; i < wordlength; i++)
                     {
                         amcuoitmp += am_tiet[i];
                     }
@@ -276,14 +308,14 @@ namespace KiDung
                             if (amcuoitmp == ac)
                             {
                                 checkcuoi = true;
-                                checkgiua = false;//can phai kiem tra tiep amgiua cua word o phan duoi
+                                checkgiua = false;//can phai kiem tra tiep amgiua cua word
                                 break;
                             }
                         }
 
                         /*neu check phan con lai cua word khong nam trong amcuoi[],
                          *  thi can check ca cum tu xem co nam trong amcuoi_dung_mot_minh[] khong
-                         *  vi doi khi mot van cung co the la mot tu vidu: "an"*/
+                         *  vi doi khi mot van cung co the la mot tu vidu: "an"
                         if (checkcuoi == false)
                         {
                             amdautmp -= am_tiet[index];
@@ -296,9 +328,9 @@ namespace KiDung
                                     break;
                                 }
                             }
-                        }
+                        }*/
                     }    
-                }              
+                //}              
             }
 
             /*neu da kiem tra am dau va am cuoi cua tu co ton tai thi kiem tra xem hai am nay co duoc di cung nhau khong.
@@ -310,7 +342,8 @@ namespace KiDung
                 checkgiua = true;
                 string amgiuatmp = am_tiet[index - 1] + am_tiet[index];
 
-                if(word.Length == 2)
+                
+                if (word.Length == 2)
                 {
                     foreach (string ag in cac_am_khong_the_dung_canh_nhau_neu_tu_chi_co_hai_am_tiet)
                     {
@@ -321,7 +354,7 @@ namespace KiDung
                         }
                     }
                 }
-                else
+                if(checkgiua == true)
                 {
                     foreach (string ag in cac_cap_am_khong_duoc_dung_cung_nhau)
                     {
@@ -331,23 +364,25 @@ namespace KiDung
                             break;
                         }
                     }
-
                 }
 
                 if (checkgiua == true) return true;
+                else return false;
             }
             else if ((checkdau == true) && (checkcuoi == true) && (checkgiua == true)) return true;
             else return false;
         }
-    }
 
-    public bool checkCT(string word)
-    {
-        bool check1 = false, check2 = false;
-        check1 = this.checklength(word);
-        check2 = this.checkCT(word);
-        if (check1 && check2) return true;
-        else return true;
+
+        public bool checkword(string word)
+        {
+            bool check1 = false, check2 = false;
+            check1 = this.checklength(word);
+            check2 = this.checkct(word);
+            if (check1 == false) return false;
+            if (check1 == false) return false;
+            return true;
+        }
     }
 }
 
