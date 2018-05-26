@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KimDung", "KimDung\KimDung.csproj", "{6B0A08E7-3BDA-4667-B01E-0ADFC8AE47A3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Search", "..\Search\Search\Search.csproj", "{3028C124-6C2C-4DAB-AAD2-5EE42ABC9E57}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hightlight", "..\Hightlight\Hightlight\Hightlight.csproj", "{73EF3B2A-9BCA-42DA-A29F-BBC61A7547A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2E59EF89-C983-42D1-9D2F-D7E4F08669F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

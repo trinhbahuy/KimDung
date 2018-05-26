@@ -26,7 +26,9 @@ namespace KimDung
         private void Click_Btn1(object sender, EventArgs e)
         {
             //MessageBox.Show("abc");
-            //CheckCT obj2 = new CheckCT();
+            CheckCT obj2 = new CheckCT();
+            bool result = obj2.checkword("bảo");
+            MessageBox.Show(result.ToString());
         }
 
 

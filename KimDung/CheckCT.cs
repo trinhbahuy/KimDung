@@ -217,7 +217,7 @@ namespace KimDung
             int index = 0;
             int wordlength = word.Length;
             bool checkdau = false, checkcuoi = false, checkgiua = true, checktmp1 = true;
-            string amdautmp = "", amcuoitmp = "";
+            string amdautmp = "", amdautmp2 = "", amcuoitmp = "";
 
 
 
@@ -226,8 +226,8 @@ namespace KimDung
             {
                 if(tmpword == ad)
                 {
-                    checkdau == true;
-                    checkcuoi == true;
+                    checkdau = true;
+                    checkcuoi = true;
                     break;
                 }
             }
@@ -237,8 +237,8 @@ namespace KimDung
             {
                 if(tmpword == ac)
                 {
-                    checkdau == true;
-                    checkcuoi == true;
+                    checkdau = true;
+                    checkcuoi = true;
                     break;
                 }
             }
@@ -255,6 +255,7 @@ namespace KimDung
                         if (amdautmp == ad)
                         {
                             checktmp1 = true;
+                            amdautmp2 = amdautmp;
                             break;
                         }
                     }
@@ -300,7 +301,7 @@ namespace KimDung
                     }
 
                     //neu tu bi lap lai am dau, tu do chac chan sai chinh ta VD: "aa", "bb"
-                    if ((amdautmp - am_tiet[index]) == amcuoitmp) checkcuoi == false;
+                    if (amdautmp2 == amcuoitmp) checkcuoi = false;
                     else
                     {
                         foreach (string ac in amcuoi)
