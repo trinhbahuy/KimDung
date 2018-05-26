@@ -70,7 +70,7 @@
             this.list.FormattingEnabled = true;
             this.list.Location = new System.Drawing.Point(12, 12);
             this.list.Name = "list";
-            this.list.Size = new System.Drawing.Size(121, 21);
+            this.list.Size = new System.Drawing.Size(178, 21);
             this.list.TabIndex = 7;
             this.list.SelectionChangeCommitted += new System.EventHandler(this.list_SelectionChangeCommitted);
             // 
@@ -89,7 +89,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(896, 470);
+            this.ClientSize = new System.Drawing.Size(888, 470);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.list);
             this.Controls.Add(this.rich);

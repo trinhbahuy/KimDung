@@ -205,7 +205,7 @@ namespace KiDung
 
 
         
-        //kiem tra tu co am dau voi am cuoi thoa man khong
+        //kiem tra chinh ta
         public bool check(string word)
         {
             string tmpword = word.ToLower();

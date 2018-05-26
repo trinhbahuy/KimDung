@@ -45,7 +45,7 @@ namespace KimDung
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=HUY;Initial Catalog=kim_dung;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=DUCHUY5700;Initial Catalog=kim_dung;Integrated Security=True");
             try
             {
                 conn.Open();
@@ -53,7 +53,8 @@ namespace KimDung
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    list.Items.Add(rdr["ten_chuong"].ToString());
+                    string ten_chuong = "Chương " + rdr["id"] + ": " + rdr["ten_chuong"].ToString();
+                    list.Items.Add(ten_chuong);
                 }
             }
             catch
@@ -65,7 +66,7 @@ namespace KimDung
         private void list_SelectionChangeCommitted(object sender, EventArgs e)
         {
             String ten_chuong = list.SelectedItem.ToString();
-            SqlConnection conn = new SqlConnection(@"Data Source=HUY;Initial Catalog=kim_dung;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=DUCHUY5700;Initial Catalog=kim_dung;Integrated Security=True");
             try
             {
                 conn.Open();

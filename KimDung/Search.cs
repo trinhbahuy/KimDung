@@ -42,9 +42,9 @@ namespace KimDung
 
         }
 
-        public void find()
+        public void find(string s)
         {
-            String s = @" Ở bên kia bầu trời về đêm chắc đang lạnh dần. Và em giờ đang chìm trong giấc mơ êm đềm. Gửi mây mang vào phòng vòng tay của anh nồng nàn. ";
+            //String s = @" Ở bên kia bầu trời về đêm chắc đang lạnh dần. Và em giờ đang chìm trong giấc mơ êm đềm. Gửi mây mang vào phòng vòng tay của anh nồng nàn. ";
             splits = s.Split('.');
             splitscheck = new bool[splits.Length];
             for(int i=0;i<splits.Length;i++)
