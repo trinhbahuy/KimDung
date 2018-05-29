@@ -26,26 +26,6 @@ namespace KimDung
         private void Click_Btn1(object sender, EventArgs e)
         {
 
-            /*SqlConnection conn = new SqlConnection(@"Data Source=DUCHUY5700;Initial Catalog=test;Integrated Security=True");
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("Select * from Than_Dieu_Dai_Hiep where id = 1", conn);
-                SqlDataReader rdr = cmd.ExecuteReader();
-                if (rdr.Read())
-                {
-
-                    String content = rdr.GetString(rdr.GetOrdinal("content"));
-
-                    rich.Text = content;
-                }
-            }
-            catch
-            {
-                MessageBox.Show("lỗi");
-            }
-            */
-
 
 
             /*CheckCT obj2 = new CheckCT();
