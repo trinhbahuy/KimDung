@@ -72,6 +72,7 @@
             this.list.Name = "list";
             this.list.Size = new System.Drawing.Size(178, 21);
             this.list.TabIndex = 7;
+            this.list.SelectedIndexChanged += new System.EventHandler(this.list_SelectedIndexChanged);
             this.list.SelectionChangeCommitted += new System.EventHandler(this.list_SelectionChangeCommitted);
             // 
             // button1

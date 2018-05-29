@@ -25,12 +25,93 @@ namespace KimDung
 
         private void Click_Btn1(object sender, EventArgs e)
         {
-            //MessageBox.Show("abc");
-            CheckCT obj2 = new CheckCT();
-            bool result = obj2.checkword("bảo");
-            MessageBox.Show(result.ToString());
-        }
 
+            /*SqlConnection conn = new SqlConnection(@"Data Source=DUCHUY5700;Initial Catalog=test;Integrated Security=True");
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("Select * from Than_Dieu_Dai_Hiep where id = 1", conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.Read())
+                {
+
+                    String content = rdr.GetString(rdr.GetOrdinal("content"));
+
+                    rich.Text = content;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("lỗi");
+            }
+            */
+
+
+
+            /*CheckCT obj2 = new CheckCT();
+            bool result = obj2.checkword("biết");
+            //MessageBox.Show(result.ToString());*/
+            MatchCollection AllMatches;
+            Regex myRegex = new Regex(@"(\w+)");
+            AllMatches = myRegex.Matches(rich.Text);
+            CheckCT obj2 = new CheckCT();
+            obj2.cac_tu_lay_duoc = new string[AllMatches.Count];
+            obj2.check_cac_tu_lay_duoc = new bool[AllMatches.Count];
+            for(int i = 0; i < AllMatches.Count; i++)
+            {
+                obj2.cac_tu_lay_duoc[i] = AllMatches[i].Groups[0].Value;
+                obj2.check_cac_tu_lay_duoc[i] = true;
+            }
+            obj2.kiem_tra_chinh_ta();
+
+            /*string result = "";
+            for (int i=1;i<obj2.check_cac_tu_lay_duoc.Length;i++)
+            {
+                if (obj2.check_cac_tu_lay_duoc[i] == false)
+                {
+                    result += obj2.cac_tu_lay_duoc[i];
+                    result += "\t";
+                }
+
+            }
+            rich.Text = result;*/
+            //MessageBox.Show(result);
+
+
+
+            //high light
+            for(int i=1;i< obj2.check_cac_tu_lay_duoc.Length;i++)
+            {
+                if (obj2.check_cac_tu_lay_duoc[i] == false)
+                {
+                    int startIndex = 0;
+                    while (startIndex < rich.TextLength)
+                    {
+                        int wordStartIndex = rich.Find(obj2.cac_tu_lay_duoc[i], startIndex, RichTextBoxFinds.None);
+                        if (wordStartIndex != -1)
+                        {
+                            rich.SelectionStart = wordStartIndex;
+                            rich.SelectionLength = obj2.cac_tu_lay_duoc[i].Length;
+                            rich.SelectionBackColor = Color.Yellow;
+                        }
+                        else break;
+                        startIndex += wordStartIndex + obj2.cac_tu_lay_duoc[i].Length;
+                    }
+                }               
+            }
+            /*string result = "";
+            foreach (Match SomeMatch in AllMatches)
+            {
+                if (myRegex2.IsMatch(SomeMatch.Groups[0].Value))
+                {
+                    result += SomeMatch.Groups[0].Value;
+                    result += "\n";
+                }
+                
+            }
+            MessageBox.Show(result);*/
+
+        }
 
 
         private void Find(object sender, EventArgs e)
@@ -85,6 +166,11 @@ namespace KimDung
          {
              MessageBox.Show("lỗi");
          }
+        }
+
+        private void list_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }   
