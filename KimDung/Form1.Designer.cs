@@ -52,7 +52,7 @@
             this.check.Name = "check";
             this.check.Size = new System.Drawing.Size(112, 35);
             this.check.TabIndex = 5;
-            this.check.Text = "check";
+            this.check.Text = "check CT";
             this.check.UseVisualStyleBackColor = true;
             this.check.Click += new System.EventHandler(this.Click_Btn1);
             // 
@@ -60,6 +60,7 @@
             // 
             this.rich.Location = new System.Drawing.Point(196, 60);
             this.rich.Name = "rich";
+            this.rich.ReadOnly = true;
             this.rich.Size = new System.Drawing.Size(688, 398);
             this.rich.TabIndex = 6;
             this.rich.Text = "";
