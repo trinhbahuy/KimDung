@@ -33,6 +33,7 @@
             this.rich = new System.Windows.Forms.RichTextBox();
             this.list = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // search
@@ -42,7 +43,7 @@
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(100, 31);
             this.search.TabIndex = 1;
-            this.search.Text = "search";
+            this.search.Text = "Search";
             this.search.UseVisualStyleBackColor = true;
             this.search.Click += new System.EventHandler(this.Find);
             // 
@@ -52,7 +53,7 @@
             this.check.Name = "check";
             this.check.Size = new System.Drawing.Size(112, 35);
             this.check.TabIndex = 5;
-            this.check.Text = "check CT";
+            this.check.Text = "Check CT";
             this.check.UseVisualStyleBackColor = true;
             this.check.Click += new System.EventHandler(this.Click_Btn1);
             // 
@@ -68,10 +69,11 @@
             // 
             // list
             // 
+            this.list.ForeColor = System.Drawing.SystemColors.WindowText;
             this.list.FormattingEnabled = true;
             this.list.Location = new System.Drawing.Point(12, 12);
             this.list.Name = "list";
-            this.list.Size = new System.Drawing.Size(178, 21);
+            this.list.Size = new System.Drawing.Size(170, 21);
             this.list.TabIndex = 7;
             this.list.SelectedIndexChanged += new System.EventHandler(this.list_SelectedIndexChanged);
             this.list.SelectionChangeCommitted += new System.EventHandler(this.list_SelectionChangeCommitted);
@@ -82,9 +84,18 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
+            this.button1.Text = "LOAD";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(12, 94);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(170, 364);
+            this.richTextBox1.TabIndex = 9;
+            this.richTextBox1.Text = "";
             // 
             // fmain
             // 
@@ -92,6 +103,7 @@
             this.AutoScroll = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(888, 470);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.list);
             this.Controls.Add(this.rich);
@@ -109,6 +121,7 @@
         private System.Windows.Forms.RichTextBox rich;
         private System.Windows.Forms.ComboBox list;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

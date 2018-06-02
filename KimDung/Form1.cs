@@ -44,23 +44,9 @@ namespace KimDung
             }
             obj2.kiem_tra_chinh_ta();
 
-            string result = "";
-            for (int i=1;i<obj2.check_cac_tu_lay_duoc.Length;i++)
-            {
-                if (obj2.check_cac_tu_lay_duoc[i] == false)
-                {
-                    result += obj2.cac_tu_lay_duoc[i];
-                    result += "\t";
-                }
-
-            }
-            rich.Text = result;
-            //MessageBox.Show(result);
-
-
 
             //high light
-            /*for(int i=1;i< obj2.check_cac_tu_lay_duoc.Length;i++)
+            for(int i=1;i< obj2.check_cac_tu_lay_duoc.Length;i++)
             {
                 if (obj2.check_cac_tu_lay_duoc[i] == false)
                 {
@@ -78,7 +64,7 @@ namespace KimDung
                         startIndex += wordStartIndex + obj2.cac_tu_lay_duoc[i].Length;
                     }
                 }               
-            }*/
+            }
             /*string result = "";
             foreach (Match SomeMatch in AllMatches)
             {
@@ -90,6 +76,21 @@ namespace KimDung
                 
             }
             MessageBox.Show(result);*/
+
+            string result = "Các từ sai chính tả:\n";
+            for (int i = 1; i < obj2.check_cac_tu_lay_duoc.Length; i++)
+            {
+                if (obj2.check_cac_tu_lay_duoc[i] == false)
+                {
+                    
+                    result += obj2.cac_tu_lay_duoc[i];
+                    result += "    ";
+
+                }
+
+            }
+            richTextBox1.Text = result;
+            //MessageBox.Show(result);
 
         }
 
