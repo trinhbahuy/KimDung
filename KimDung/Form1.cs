@@ -44,7 +44,7 @@ namespace KimDung
             }
             obj2.kiem_tra_chinh_ta();
 
-            /*string result = "";
+            string result = "";
             for (int i=1;i<obj2.check_cac_tu_lay_duoc.Length;i++)
             {
                 if (obj2.check_cac_tu_lay_duoc[i] == false)
@@ -54,13 +54,13 @@ namespace KimDung
                 }
 
             }
-            rich.Text = result;*/
+            rich.Text = result;
             //MessageBox.Show(result);
 
 
 
             //high light
-            for(int i=1;i< obj2.check_cac_tu_lay_duoc.Length;i++)
+            /*for(int i=1;i< obj2.check_cac_tu_lay_duoc.Length;i++)
             {
                 if (obj2.check_cac_tu_lay_duoc[i] == false)
                 {
@@ -78,7 +78,7 @@ namespace KimDung
                         startIndex += wordStartIndex + obj2.cac_tu_lay_duoc[i].Length;
                     }
                 }               
-            }
+            }*/
             /*string result = "";
             foreach (Match SomeMatch in AllMatches)
             {
