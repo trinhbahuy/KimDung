@@ -97,7 +97,7 @@
             this.Controls.Add(this.check);
             this.Controls.Add(this.search);
             this.Name = "fmain";
-            this.Text = "fmain";
+            this.Text = "Đọc truyện kiếm kiệp của Kim Dung";
             this.Load += new System.EventHandler(this.fmain_Load);
             this.ResumeLayout(false);
 

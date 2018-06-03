@@ -89,7 +89,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.Text = "Đọc truyện kiếm kiệp của Kim Dung";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

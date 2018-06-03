@@ -13,6 +13,7 @@ namespace KimDung
 {
     public partial class Form2 : Form
     {
+        public String name = Form3.name;
         public Form2()
         {
             InitializeComponent();
@@ -32,23 +33,33 @@ namespace KimDung
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("Select * from than_dieu_dai_hiep", conn);
+                SqlCommand cmd = new SqlCommand("Select * from " + name, conn);
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
                     ten_chuong ="Chương " + rdr["id"] + ": " + rdr["ten_chuong"].ToString();
                     noi_dung_chuyen = rdr.GetString(rdr.GetOrdinal("noi_dung"));
                     search1.find(noi_dung_chuyen);
+                    bool check_chuong = false;
+                    int dem_ket_qua = 1;
                     for (int i = 0; i < search1.splitscheck.Length; i++)
                     {
                         if (search1.splitscheck[i] == true)
                         {
-                            textresult += ten_chuong;
-                            textresult += "\n";
+                            if (check_chuong == false)
+                            {
+                                textresult += ten_chuong;
+                                check_chuong = true;
+                            }
+                            textresult += "\n\nKết quả "+ dem_ket_qua + ":\n";
+                            dem_ket_qua += 1;
                             textresult += search1.splits[i];
-                            textresult += "\n\n\n\n\n";
-                            break;
                         }
+                        
+                    }
+                    if (check_chuong == true)
+                    {
+                        textresult += "\n\n\n\n\n";
                     }
                 }
             }

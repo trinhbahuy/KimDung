@@ -68,7 +68,7 @@
             this.Controls.Add(this.search_form);
             this.Controls.Add(this.button1);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Search";
             this.ResumeLayout(false);
             this.PerformLayout();
 
