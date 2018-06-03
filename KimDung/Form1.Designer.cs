@@ -32,7 +32,6 @@
             this.check = new System.Windows.Forms.Button();
             this.rich = new System.Windows.Forms.RichTextBox();
             this.list = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
@@ -75,18 +74,7 @@
             this.list.Name = "list";
             this.list.Size = new System.Drawing.Size(170, 21);
             this.list.TabIndex = 7;
-            this.list.SelectedIndexChanged += new System.EventHandler(this.list_SelectedIndexChanged);
             this.list.SelectionChangeCommitted += new System.EventHandler(this.list_SelectionChangeCommitted);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(371, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "LOAD";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // richTextBox1
             // 
@@ -104,13 +92,13 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(888, 470);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.list);
             this.Controls.Add(this.rich);
             this.Controls.Add(this.check);
             this.Controls.Add(this.search);
             this.Name = "fmain";
             this.Text = "fmain";
+            this.Load += new System.EventHandler(this.fmain_Load);
             this.ResumeLayout(false);
 
         }
@@ -120,7 +108,6 @@
         private System.Windows.Forms.Button check;
         private System.Windows.Forms.RichTextBox rich;
         private System.Windows.Forms.ComboBox list;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

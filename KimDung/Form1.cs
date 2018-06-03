@@ -13,16 +13,31 @@ namespace KimDung
 {
     public partial class fmain : Form
     {
+        public String name = Form3.name;
         public fmain()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void fmain_Load(object sender, EventArgs e)
         {
-            
+            SqlConnection conn = new SqlConnection(@"Data Source=HUY;Initial Catalog=kim_dung;Integrated Security=True");
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("Select * from " +name, conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    string ten_chuong = /*"Chương " + rdr["id"] + ": " +*/ rdr["ten_chuong"].ToString();
+                    list.Items.Add(ten_chuong);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("lỗi");
+            }
         }
-
         private void Click_Btn1(object sender, EventArgs e)
         {
 
@@ -107,30 +122,12 @@ namespace KimDung
            
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            SqlConnection conn = new SqlConnection(@"Data Source=DUCHUY5700;Initial Catalog=kim_dung;Integrated Security=True");
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("Select * from than_dieu_dai_hiep", conn);
-                SqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    string ten_chuong = /*"Chương " + rdr["id"] + ": " +*/ rdr["ten_chuong"].ToString();
-                    list.Items.Add(ten_chuong);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("lỗi");
-            }
-        }
+        
 
         private void list_SelectionChangeCommitted(object sender, EventArgs e)
         {
             String ten_chuong = list.SelectedItem.ToString();
-            SqlConnection conn = new SqlConnection(@"Data Source=DUCHUY5700;Initial Catalog=kim_dung;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=HUY;Initial Catalog=kim_dung;Integrated Security=True");
             try
             {
                 conn.Open();
@@ -148,9 +145,6 @@ namespace KimDung
          }
         }
 
-        private void list_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }   
