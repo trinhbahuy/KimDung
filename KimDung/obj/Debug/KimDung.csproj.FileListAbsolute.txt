@@ -41,3 +41,8 @@ C:\Users\huy\Desktop\KimDung\KimDung\obj\Debug\KimDung.exe
 C:\Users\huy\Desktop\KimDung\KimDung\obj\Debug\KimDung.pdb
 C:\Users\huy\Desktop\KimDung\KimDung\obj\Debug\KimDung.Form3.resources
 C:\Users\nguyen duc huy\Documents\Visual Studio 2015\Projects\KimDung\KimDung\KimDung\obj\Debug\KimDung.Form3.resources
+C:\Users\huy\Desktop\KimDung\KimDung\bin\Debug\Interop.WMPLib.dll
+C:\Users\huy\Desktop\KimDung\KimDung\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\huy\Desktop\KimDung\KimDung\obj\Debug\Interop.WMPLib.dll
+C:\Users\huy\Desktop\KimDung\KimDung\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\huy\Desktop\KimDung\KimDung\obj\Debug\KimDung.csproj.ResolveComReference.cache
